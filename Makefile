@@ -1,7 +1,7 @@
 CC			=	gcc
-CPPFLAGS	=	-I$(ROOT_DIR)/include
+CPPFLAGS	=	-I$(BREW_DIR)/include
 CFLAGS		=	-W -Wall -Wextra -Werror
-LDFLAGS		=	-L$(ROOT_DIR)/lib -lcriterion
+LDFLAGS		=	-L$(BREW_DIR)/lib -lcriterion
 
 SRC			=	$(wildcard src/*.c)
 OBJ			=	$(SRC:.c=.o)
