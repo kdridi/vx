@@ -9,8 +9,12 @@ TARGET		=	./vx.exe
 
 all			:	$(TARGET)
 
-watch		:	all
+test		:	all
+			clear
 			$(TARGET)
+
+watch		:
+			@watchexec --exts c,h make -s test
 
 $(TARGET)	:	$(OBJ)
 			$(CC) -o $@ $^ $(LDFLAGS)
