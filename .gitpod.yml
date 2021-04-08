@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: make
-    command: watchexec --exts c,h make ROOT_DIR=${ROOT_DIR} test
+    command: watchexec --exts c,h make BREW_DIR=${BREW_DIR} test
