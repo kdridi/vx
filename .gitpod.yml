@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: make
-    command: bash -c "watchexec --exts c,h make BREW_DIR=${BREW_DIR} test"
+    command: bash -c "sudo ldconfig && watchexec --exts c,h make BREW_DIR=${BREW_DIR} test"
