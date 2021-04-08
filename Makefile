@@ -1,6 +1,7 @@
 CC			=	gcc
+CPPFLAGS	=	-I$(ROOT_DIR)/include
 CFLAGS		=	-W -Wall -Wextra -Werror
-LDFLAGS		=	
+LDFLAGS		=	-L$(ROOT_DIR)/lib -lcriterion
 
 SRC			=	$(wildcard src/*.c)
 OBJ			=	$(SRC:.c=.o)

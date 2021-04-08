@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <criterion/criterion.h>
 
-int main() {
-    printf("Hello, world!\n");
-    return (EXIT_SUCCESS);
+#include <stdbool.h>
+
+Test(criterion, success) {
+    cr_assert(false);
 }
