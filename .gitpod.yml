@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: make
-    command: make watch
+    command: watchexec --exts c,h make test

@@ -13,9 +13,6 @@ test		:	all
 			clear
 			$(TARGET)
 
-watch		:
-			@watchexec --exts c,h make -s test
-
 $(TARGET)	:	$(OBJ)
 			$(CC) -o $@ $^ $(LDFLAGS)
 
