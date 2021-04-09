@@ -10,5 +10,5 @@ FROM gitpod/workspace-full
 # RUN brew install dwatch watchexec watchman && \
 #     brew install snaipe/soft/criterion
 
-RUN find /
+RUN find / -name Dockerfile
 RUN make docker
