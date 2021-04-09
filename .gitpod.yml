@@ -1,6 +1,11 @@
 image:
   file: .gitpod.Dockerfile
 
+# tasks:
+#   - init: make
+#     command: bash -c "sudo ldconfig && watchexec --exts c,h make BREW_DIR=${BREW_DIR} test"
+
 tasks:
-  - init: make
-    command: bash -c "sudo ldconfig && watchexec --exts c,h make BREW_DIR=${BREW_DIR} test"
+  - command: sudo docker-up
+    name: Docker daemon
+  - command: docker run kdridi/vx bash -c "echo hello from docker"
