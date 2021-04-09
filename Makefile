@@ -1,3 +1,5 @@
+DOCKER		=	docker run --name watch --rm -it -v $(shell pwd):/mnt -w /mnt
+
 CC			=	gcc
 CPPFLAGS	=	
 CFLAGS		=	-W -Wall -Wextra -Werror
@@ -30,6 +32,6 @@ docker		:
 			docker build -t kdridi/$(NAME) .
 
 watch		:	docker
-			docker run --name watch --rm -v $PWD:/mnt -w /mnt kdridi/$(NAME) bash -c '$HOME/.cargo/bin/watchexec --exts c,h make test'
+			$(DOCKER) kdridi/$(NAME) make test
 
 .PHONY		:	all test clean fclean re docker watch
