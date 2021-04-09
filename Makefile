@@ -1,12 +1,13 @@
 CC			=	gcc
-CPPFLAGS	=	-I$(BREW_DIR)/include
+CPPFLAGS	=	
 CFLAGS		=	-W -Wall -Wextra -Werror
-LDFLAGS		=	-L$(BREW_DIR)/lib -lcriterion
+LDFLAGS		=	-lcriterion
 
 SRC			=	$(wildcard src/*.c)
 OBJ			=	$(SRC:.c=.o)
 
-TARGET		=	./vx.exe
+NAME		=	vx
+TARGET		=	./$(NAME).exe
 
 all			:	$(TARGET)
 
@@ -24,3 +25,11 @@ fclean		:	clean
 			$(RM) $(TARGET)
 
 re			:	fclean all
+
+docker		:
+			docker build -t kdridi/$(NAME) .
+
+watch		:	docker
+			docker run --name watch --rm -v $PWD:/mnt -w /mnt kdridi/$(NAME) bash -c '$HOME/.cargo/bin/watchexec --exts c,h make test'
+
+.PHONY		:	all test clean fclean re docker watch

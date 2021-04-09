@@ -9,3 +9,6 @@ FROM gitpod/workspace-full
 # USER gitpod
 # RUN brew install dwatch watchexec watchman && \
 #     brew install snaipe/soft/criterion
+
+RUN ls -l
+RUN make docker

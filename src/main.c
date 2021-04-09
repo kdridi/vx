@@ -3,5 +3,5 @@
 #include <stdbool.h>
 
 Test(criterion, success) {
-    cr_assert(true);
+    cr_assert(false);
 }
