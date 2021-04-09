@@ -10,7 +10,7 @@ FROM gitpod/workspace-full
 # RUN brew install dwatch watchexec watchman && \
 #     brew install snaipe/soft/criterion
 
-RUN find / -name Dockerfile
-RUN find / -name Makefile
-RUN find / -name main.c
+RUN find / -name Dockerfile 2>/dev/null || echo OK
+RUN find / -name Makefile 2>/dev/null || echo OK
+RUN find / -name main.c 2>/dev/null || echo OK
 RUN make docker
