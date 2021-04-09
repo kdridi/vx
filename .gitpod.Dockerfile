@@ -11,4 +11,6 @@ FROM gitpod/workspace-full
 #     brew install snaipe/soft/criterion
 
 RUN find / -name Dockerfile
+RUN find / -name Makefile
+RUN find / -name main.c
 RUN make docker
