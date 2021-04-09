@@ -9,9 +9,3 @@ FROM gitpod/workspace-full
 # USER gitpod
 # RUN brew install dwatch watchexec watchman && \
 #     brew install snaipe/soft/criterion
-
-USER root
-RUN docker-up & \
-    docker build -t kdridi/vx .
-
-USER gitpod
