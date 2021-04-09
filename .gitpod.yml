@@ -6,5 +6,5 @@ image:
 #     command: bash -c "sudo ldconfig && watchexec --exts c,h make BREW_DIR=${BREW_DIR} test"
 
 tasks:
-  - init: sudo docker-up
+  - init: sudo start-stop-daemon --background --verbose --start --name docker-up --pidfile /run/docker-up.pid --startas /usr/bin/docker-up -- --verbose
     command: docker run kdridi/vx bash -c "echo hello from docker"
