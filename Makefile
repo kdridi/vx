@@ -1,17 +1,17 @@
 DOCKER		=	docker run --name watch --rm -it -v $(shell pwd):/mnt -w /mnt
 
-CC			=	gcc
+CC		=	gcc
 CPPFLAGS	=	
 CFLAGS		=	-W -Wall -Wextra -Werror
 LDFLAGS		=	-lcriterion
 
-SRC			=	$(wildcard src/*.c)
-OBJ			=	$(SRC:.c=.o)
+SRC		=	$(wildcard src/*.c)
+OBJ		=	$(SRC:.c=.o)
 
 NAME		=	vx
 TARGET		=	./$(NAME).exe
 
-all			:	$(TARGET)
+all		:	$(TARGET)
 
 test		:	all
 			clear
@@ -26,7 +26,7 @@ clean		:
 fclean		:	clean
 			$(RM) $(TARGET)
 
-re			:	fclean all
+re		:	fclean all
 
 docker		:
 			docker build -t kdridi/$(NAME) .
